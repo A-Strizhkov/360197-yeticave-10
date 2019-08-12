@@ -141,15 +141,12 @@ $user_name = 'Андрей'; // укажите здесь ваше имя
             <!--Здесь второй подраздел задания -->
             <?php
             $categories = ["Доски и лыжи","Крепления","Ботинки","Одежда","Инструменты","Разное"];
-            $index = 0;
-            $num_count = count($categories);
             ?>
-            <?php while ($index < $num_count): ?>
+            <?php foreach ($categories as $value): ?>
             <li class="nav__item">
-                <a href="pages/all-lots.html"><?=$categories[$index];?></a>
+                <a href="pages/all-lots.html"><?=$value;?></a>
             </li>
-            <?php $index++; ?>
-            <?php endwhile; ?>
+            <?php endforeach; ?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
