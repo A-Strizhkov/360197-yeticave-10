@@ -1,22 +1,23 @@
 <?php
 $is_auth = rand(0, 1);
 $user_name = 'Андрей'; // укажите здесь ваше имя
+
 function format_price(
-    $cost
+    $num
 )
 {
-    ceil($cost);
+    ceil($num);
 
-    if ($cost >= 1000) {
-        $cost = number_format($cost, 0, '', ' ');
+    if ($num >= 1000) {
+        $num = number_format($num, 0, '', ' ');
 
     }
 
-    return $cost .= " ₽";
+    return $num .= " ₽";
 }
 
 
-$cost_new = format_price($cost_new);
+$num = format_price($num);
 
 
 $lots_list = [
