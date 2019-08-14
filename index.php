@@ -1,8 +1,8 @@
 <?php
-$is_auth = rand(0, 1);
-$user_name = 'Андрей'; // укажите здесь ваше имя
+    $is_auth = rand(0, 1);
+    $user_name = 'Андрей'; // укажите здесь ваше имя
 
-function format_price(
+    function format_price(
     $num
 )
 {
@@ -16,11 +16,7 @@ function format_price(
     return $num .= " ₽";
 }
 
-
-$num = format_price($num);
-
-
-$lots_list = [
+    $lots = [
     [
         'title' => '2014 Rossignol District Snowboard',
         'category' => 'Доски и лыжи',
@@ -128,18 +124,18 @@ $lots_list = [
             </div>
             <ul class="lots__list">
 
-                <?php foreach ($lots_list as $key => $value) : ?>
+                <?php foreach ($lots as $lot) : ?>
                     <li class="lots__item lot">
                         <div class="lot__image">
-                            <img src="<?=$value['item']; ?>" width="350" height="260" alt="">
+                            <img src="<?=$lot['item']; ?>" width="350" height="260" alt="">
                         </div>
                         <div class="lot__info">
-                            <span class="lot__category"><?=$value['category']; ?></span>
-                            <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?=$value['title']; ?></a></h3>
+                            <span class="lot__category"><?=$lot['category']; ?></span>
+                            <h3 class="lot__title"><a class="text-link" href="pages/lot.html"><?=$lot['title']; ?></a></h3>
                             <div class="lot__state">
                                 <div class="lot__rate">
-                                    <span class="lot__amount"><?=$value['price']; ?></span>
-                                    <span class="lot__cost"><?=format_price($value['price']);?></span>
+                                    <span class="lot__amount">Стартовая цена</span>
+                                    <span class="lot__cost"><?=format_price($lot['price']);?></span>
                                 </div>
                                 <div class="lot__timer timer">
                                     12:23
