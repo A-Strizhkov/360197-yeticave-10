@@ -61,8 +61,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Главная</title>
-    <link href="css/normalize.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/normalize.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-wrapper">
@@ -79,29 +79,26 @@
             </form>
             <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
 
-            <nav class="user-menu">
-
-                <?php if  ($is_auth == 1): ?>
-                    <div class="user-menu__logged">
-                        <p><?=$user_name; ?></p>
-                        <a class="user-menu__bets" href="pages/my-bets.html">Мои ставки</a>
-                        <a class="user-menu__logout" href="#">Выход</a>
-                    </div>
-                <?php else :?>
-                    <ul class="user-menu__list">
-                        <li class="user-menu__item">
-                            <a href="#">Регистрация</a>
-                        </li>
-                        <li class="user-menu__item">
-                            <a href="#">Вход</a>
-                        </li>
-                    </ul>
-
-                <?php endif; ?>
-
-            </nav>
-        </div>
-    </header>
+        <nav class="user-menu">
+            <?php if  ($is_auth == 1): ?>
+                <div class="user-menu__logged">
+                    <p><?=$user_name; ?></p>
+                    <a class="user-menu__bets" href="pages/my-bets.html">Мои ставки</a>
+                    <a class="user-menu__logout" href="#">Выход</a>
+                </div>
+            <?php else :?>
+                <ul class="user-menu__list">
+                    <li class="user-menu__item">
+                        <a href="#">Регистрация</a>
+                    </li>
+                    <li class="user-menu__item">
+                        <a href="#">Вход</a>
+                    </li>
+                </ul>
+            <?php endif; ?>
+        </nav>
+    </div>
+</header>
 
     <main class="container">
         <section class="promo">
@@ -157,9 +154,9 @@
             $categories = ["Доски и лыжи","Крепления","Ботинки","Одежда","Инструменты","Разное"];
             ?>
             <?php foreach ($categories as $value): ?>
-                <li class="nav__item">
-                    <a href="pages/all-lots.html"><?=$value;?></a>
-                </li>
+            <li class="nav__item">
+                <a href="pages/all-lots.html"><?=$value;?></a>
+            </li>
             <?php endforeach; ?>
         </ul>
     </nav>
