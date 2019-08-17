@@ -16,11 +16,9 @@ function include_template($name, $data)
     $result = ob_get_clean();
 
     return $result;
-};
+}
 
-function format_price(
-    $num
-)
+function format_price($num)
 {
     ceil($num);
 
@@ -30,17 +28,14 @@ function format_price(
     }
 
     return $num .= " ₽";
-};
-
-function esc($str
-)
+}
+function esc($str)
 {
     //$text = htmlspecialchars($str);
     $text = strip_tags($str);
 
     return $text;
-};
-
+}
 ?>
 
 
