@@ -9,7 +9,6 @@ $layout_content = include_template('layout.php', [
     'title' => 'Главная страница',
     'is_auth' => rand(0, 1),
     'user_name' => 'Андрей',
-    'timer' => format_date($dt_end)
 ]);
 print ($layout_content);
 ?>
