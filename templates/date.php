@@ -19,7 +19,7 @@ $lots = [
         'category' => 'Крепления',
         'price' => '8000',
         'item' => 'img/lot-3.jpg',
-        'data_end'=> '2019-8-20 21:20'
+        'data_end'=> '2019-11-20'
 
     ],
     [
