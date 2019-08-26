@@ -1,4 +1,4 @@
-CREATE DATABASE yeticafe
+CREATE DATABASE yeticave
 DEFAULT CHARACTER SET utf8
 DEFAULT COLLATE utf8_general_ci;
 
@@ -13,15 +13,15 @@ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 CREATE TABLE categories(
 id INT AUTO_INCREMENT PRIMARY KEY,
-symbol_code CHAR NOT NULL UNIQUE,
+symbol_code CHAR NOT NULL,
 name CHAR NOT NULL
 );
 
 CREATE TABLE lots(
 id INT AUTO_INCREMENT PRIMARY KEY,
-winner_id INT unsigned,
-author_id INT unsigned NOT NULL,
-category_id INT unsigned NOT NULL,
+winner_id INT,
+author_id INT NOT NULL,
+category_id INT NOT NULL,
 title CHAR NOT NULL,
 description TEXT,
 image_link TEXT,
@@ -29,9 +29,9 @@ start_price DECIMAL NOT NULL,
 step_bid DECIMAL NOT NULL,
 date_end DATE NOT NULL,
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-FOREIGN KEY (winner_id) references users (id),
-FOREIGN KEY (author_id) references users (id),
-FOREIGN KEY (category_id) references categories (id)
+FOREIGN KEY (winner_id) REFERENCES users (id) ON DELETE CASCADE,
+FOREIGN KEY (author_id) REFERENCES users (id) ON DELETE CASCADE,
+FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE
 );
 
 CREATE TABLE bid(
