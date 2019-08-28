@@ -11,6 +11,9 @@ VALUES ('2014 Rossignol District Snowboard', 'img/lot-1.jpg', '10999', '2019-10-
 INSERT INTO  bid (amount)
 VALUES ('112'),('245'),('356'),('466'),('665.6'),('6666.8');
 
+INSERT INTO  bid (lot_id, user_id)
+VALUES ('53','139'),('54','140'),('55', '141'),('56','142'),('57', '143'),('58', '144');
+
 Связь таблицы лот с автором, победителем и категорией
 SELECT l.id, l.title, l.description, l.image_link, l.start_price, l.date_end, u.name, u_w.name  FROM lots l
 JOIN users u ON  l.author_id = u.name
@@ -30,7 +33,7 @@ SELECT title, start_price, image_link, category_id FROM lots ORDER BY created_at
 LIMIT 9;
 
 Показать лот по его id
-SELECT * FROM lots WHERE id != 0;
+SELECT * FROM lots WHERE id = 1;
 
 Обновляем название лота по его идентификатору
 
@@ -38,4 +41,5 @@ UPDATE lots SET title = 'DC Ply Mens 2016/2017 Snowboard'
 WHERE id = '1';
 
 Получаем список ставок для лота по его идентификатору с сортировкой по дате.
-SELECT amount, lot_id from bid ORDER BY date_start DESC;
+
+SELECT lot_id FROM bid WHERE id = 1 ORDER BY date_start ASC;
