@@ -22,11 +22,6 @@ SELECT b.id, b.date_start, b.amount, u.name FROM bid b
 INNER JOIN lots l ON b.lot_id = l.id
 INNER JOIN users u ON b.user_id = u.name;
 
-Связи таблицы автора с лотом и ставкой.
-SELECT u.id, l.id, b.amount  FROM users u
-INNER JOIN lots l ON u.lot_id = l.id
-INNER JOIN bid b ON u.bid_id = b.id;
-
 Получаем категории
 SELECT * FROM categories;
 

@@ -10,7 +10,7 @@ password CHAR(255) NOT NULL,
 contact_info CHAR(255) NOT NULL,
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 lot_id INT,
-bid_id INT
+bid_T
 );
 
 CREATE TABLE categories(
