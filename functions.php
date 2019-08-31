@@ -29,13 +29,14 @@ function format_price($num)
 
     return $num .= " ₽";
 }
+
 function esc($str)
 {
-    //$text = htmlspecialchars($str);
     $text = strip_tags($str);
 
     return $text;
 }
+
 function format_date($dt_end)
 {
     $dt_end = strtotime($dt_end); //получает unixtime введеной даты

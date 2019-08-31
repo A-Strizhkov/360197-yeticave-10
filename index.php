@@ -20,7 +20,7 @@ else {
     $sql = 'SELECT `id`, `name` FROM categories';
     $result = mysqli_query($link, $sql);
     if ($result) {
-        $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        while($row = $result->fetch_assoc()){$categories[] = $row;}
     }
     else {
         $error = mysqli_error($link);
