@@ -19,7 +19,7 @@ else {
     $sql = 'SELECT `id`, `name` FROM categories';
     $result = mysqli_query($link, $sql);
     if ($result) {
-        $categories = $result::fetch_all, MYSQLI_ASSOC);
+        $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
     else {
         $error = mysqli_error($link);
