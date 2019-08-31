@@ -2,6 +2,15 @@
 require_once('functions.php');
 require_once('templates/date.php');
 require_once 'init.php';
+//$con = mysqli_connect("localhost", "root", "12345", "yeticave");
+//if ($con == false) {
+//    print("Ошибка подключения: "
+//        . mysqli_connect_error());
+//}
+//else {
+//    print("Соединение установлено");
+// выполнение запросов
+//}
 if (!$link) {
     $error = mysqli_connect_error();
     $content = include_template('error.php', ['error' => $error]);
@@ -10,7 +19,7 @@ else {
     $sql = 'SELECT `id`, `name` FROM categories';
     $result = mysqli_query($link, $sql);
     if ($result) {
-        $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $categories = $result::fetch_all, MYSQLI_ASSOC);
     }
     else {
         $error = mysqli_error($link);
