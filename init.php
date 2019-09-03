@@ -4,7 +4,6 @@ require_once 'functions.php';
 
 $link = mysqli_connect("localhost", "root", "12345", "yeticave");
 mysqli_set_charset($link, "utf8");
-print_r ($link);
 
 $categories = [];
 $content = '';
